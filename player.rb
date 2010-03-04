@@ -1,21 +1,23 @@
 # Raised when player by given id cannot be found.
 class PlayerNotFound < StandardError; end
 
+# Creates NHL player objects from NHL.com data.
 class Player
 
   require 'date'
 
   attr_reader :nhl_id, :rendered, :name, :team, :number, :height, :weight, :shoots, :position, :birthdate, :birthplace
 
-  # Search nhl.com for matching player by NHL.com id.
+  # Search nhl.com for matching player by NHL.com player id.
   def self.find(id)
     player = new(id)
-    # Attempt player html download. Throw exception if download fails.
+    # Attempt player html download. Raise exception if download fails.
     raise PlayerNotFound, "Unable to find player with ID: #{id}" unless player.update
     # Return player.
     player
   end
 
+  # Initialize player with NHL.com player id.
   def initialize(id)
     @nhl_id     = id
     @cache_file = "cache/#{@nhl_id}.html"
