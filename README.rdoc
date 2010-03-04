@@ -5,9 +5,9 @@ Player class creates NHL player objects from NHL.com data. This is a first step 
 == Examples
 
 	brodeur = Player.new(8455710) # Fetch Martin Brodeur using his NHL.com ID
-	puts broduer.name # Martin Brodeur
-	puts broduer.birthplace # Montreal, QC, Canada
-	puts broduer.height # 6' 2"
+	puts brodeur.name # Martin Brodeur
+	puts brodeur.birthplace # Montreal, QC, Canada
+	puts brodeur.height # 6' 2"
 
 == TODO
 
