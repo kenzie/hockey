@@ -1,0 +1,14 @@
+= Player
+
+Player class creates NHL player objects from NHL.com data. This is a first step in building a reliable hockey draft web application for the Annual Route 19 Draft.
+
+== Examples
+
+	brodeur = Player.new(8455710) # Fetch Martin Brodeur using his NHL.com ID
+	puts broduer.name # Martin Brodeur
+	puts broduer.birthplace # Montreal, QC, Canada
+	puts broduer.height # 6' 2"
+
+== TODO
+
+Need to add methods for finding a player by name as well as returning a player's stats, trends and status.
