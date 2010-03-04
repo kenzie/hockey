@@ -9,11 +9,11 @@ class Player
 
   # Search nhl.com for matching player by NHL.com id.
   def self.find(id)
-    @player = new(id)
+    player = new(id)
     # Attempt player html download. Throw exception if download fails.
-    raise PlayerNotFound, "Unable to find player with ID: #{id}" unless @player.update
+    raise PlayerNotFound, "Unable to find player with ID: #{id}" unless player.update
     # Return player.
-    @player
+    player
   end
 
   def initialize(id)
