@@ -60,7 +60,7 @@ private
     # regex matching for html as of May 2009
     @rendered       = Date.parse(@html.match(/Rendered:\s(.+)\s\s-->$/)[1]) # required
     @name           = @html.match(/NHL.com\s-\sPlayers:\s(.+),/)[1] # required
-    @team           = @html.match(/NHL.com\s-\sPlayers:\s.+,\s(.+)\s-/)[1]
+    @team           = @html.match(/NHL.com\s-\sPlayers:\s.+,\s(.+)\s-/) ? $~[1] : nil
     @position       = @html.match(/^\s+(Defenseman|Left\sWing|Right\sWing|Center|Goalie)$/) ? $~[1] : nil
     @number         = @html.match(/NUMBER:\s<b>(\d+)<\/b>/) ? $~[1] : nil
     @height         = @html.match(/HEIGHT:\s<b>([0-9][0-9]?'\s[0-9][0-9]?")<\/b>/) ? $~[1] : nil
